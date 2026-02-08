@@ -1,0 +1,153 @@
+/* =====================================================
+   COLOR VARIABLES (SOFT PINK, NOT OVERWHELMING)
+   ===================================================== */
+:root {
+  --pink-bg: #fff5f8;
+  --pink-light: #fde2ea;
+  --pink-accent: #f3a6b8;
+  --text-main: #444;
+}
+
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--pink-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ================= PASSWORD SCREEN ================= */
+#password-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--pink-light), var(--pink-bg));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.password-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.password-box h2 {
+  color: #d96c8b;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.password-box button {
+  background: var(--pink-accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#error-msg {
+  margin-top: 10px;
+  color: #d9534f;
+}
+
+/* ================= HEADER ================= */
+header {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(to bottom, var(--pink-light), var(--pink-bg));
+}
+
+header h1 {
+  font-size: 2.6rem;
+  color: #d96c8b;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  color: #d96c8b;
+  margin-bottom: 15px;
+}
+
+/* ================= PHOTOS ================= */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.photo-box {
+  height: 200px;
+  background: var(--pink-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  overflow: hidden;
+}
+
+/* ================= SURPRISE ================= */
+.center {
+  text-align: center;
+}
+
+.surprise-btn {
+  background: var(--pink-accent);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.7;
+}
+
+.heart {
+  color: #e2557a;
+  animation: pulse 1.5s infinite;
+}
+
+/* ================= UTIL ================= */
+.hidden {
+  display: none;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.15); }
+}
