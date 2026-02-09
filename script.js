@@ -1,5 +1,5 @@
 
-const correctPassword = "0317";
+const correctPassword = "4utofu";
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value;
@@ -92,5 +92,6 @@ function toggleMusic() {
     muteBtn.textContent = "🔇";
   }
 }
+
 
 
