@@ -86,6 +86,19 @@ And only you.
       </div>
     </section>
 
+    <audio id="bg-music" loop></audio>
+
+<button id="mute-btn" onclick="toggleMusic()">🔊</button>
+
+<div id="playlist">
+  <p class="playlist-title">Some tunes :)</p>
+  <ul>
+    <li onclick="playSong(0)">Sunsetz</li>
+    <li onclick="playSong(1)">Lovers Rock</li>
+    <li onclick="playSong(2)">Those Eyes</li>
+  </ul>
+</div>
+
   
     <footer>
       Made with love, by Rixx :)
@@ -93,19 +106,20 @@ And only you.
 
   </div>
 
-  <!-- VIDEO POPUP -->
   <div id="video-modal" class="hidden">
-    <div class="video-box">
-      <span class="close-btn" onclick="closeVideo()">✖</span>
-      <video id="popup-video" controls></video>
-    </div>
+  <div class="video-box">
+    <span class="close-btn" onclick="closeVideo()">✖</span>
+
+    <video id="popup-video" controls></video>
   </div>
+</div>
 
 
  
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
