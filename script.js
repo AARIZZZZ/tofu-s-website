@@ -1,9 +1,5 @@
-/* =====================================================
-   PASSWORD LOGIC
-   ===================================================== */
 
-// 🔐 CHANGE THE PASSWORD HERE
-const correctPassword = "0317"; // ← edit this
+const correctPassword = "0317";
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value;
@@ -17,16 +13,12 @@ function checkPassword() {
   }
 }
 
-/* =====================================================
-   CLICK ME SURPRISE
-   ===================================================== */
+
 function showSurprise() {
   document.getElementById("surprise-text").classList.remove("hidden");
 }
 
-/* =====================================================
-   FADE-IN EFFECT ON SCROLL
-   ===================================================== */
+
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
@@ -44,3 +36,4 @@ cards.forEach(card => {
   card.style.transition = "0.8s ease";
   observer.observe(card);
 });
+
