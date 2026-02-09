@@ -6,13 +6,20 @@ function checkPassword() {
   const error = document.getElementById("error-msg");
 
   if (input === correctPassword) {
+    // hide password screen
     document.getElementById("password-screen").style.display = "none";
+
+    // show main site
     document.getElementById("main-content").classList.remove("hidden");
+
+    // ================= START MUSIC HERE =================
+    music.src = playlist[0];   // first song in playlist
+    music.play();              // play after unlock
+    // ====================================================
   } else {
-    error.textContent = "Try again darlin";
+    error.textContent = "You got it wrong sweetheart!";
   }
 }
-
 
 function showSurprise() {
   document.getElementById("surprise-text").classList.remove("hidden");
@@ -37,9 +44,11 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
+let modal, video;
+
 window.addEventListener("load", () => {
-  const modal = document.getElementById("video-modal");
-  const video = document.getElementById("popup-video");
+  modal = document.getElementById("video-modal");
+  video = document.getElementById("popup-video");
 
   document.querySelectorAll(".clickable").forEach(img => {
     img.addEventListener("click", () => {
@@ -49,12 +58,39 @@ window.addEventListener("load", () => {
       video.play();
     });
   });
-
-  window.closeVideo = function () {
-    video.pause();
-    video.src = "";
-    modal.classList.add("hidden");
-  };
 });
+
+function closeVideo() {
+  video.pause();
+  video.src = "";
+  modal.classList.add("hidden");
+}
+
+const playlist = [
+  "Sunsetz - Cigarettes After Sex.mp3",
+  "Lovers Rock.mp3",
+  "New West - Those Eyes.mp3"
+];
+
+let currentSong = 0;
+const music = document.getElementById("bg-music");
+const muteBtn = document.getElementById("mute-btn");
+
+function playSong(index) {
+  currentSong = index;
+  music.src = playlist[currentSong];
+  music.play();
+  muteBtn.textContent = "🔊";
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    muteBtn.textContent = "🔊";
+  } else {
+    music.pause();
+    muteBtn.textContent = "🔇";
+  }
+}
 
 
