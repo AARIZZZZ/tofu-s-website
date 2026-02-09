@@ -37,3 +37,24 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
+window.addEventListener("load", () => {
+  const modal = document.getElementById("video-modal");
+  const video = document.getElementById("popup-video");
+
+  document.querySelectorAll(".clickable").forEach(img => {
+    img.addEventListener("click", () => {
+      const src = img.getAttribute("data-video");
+      video.src = src;
+      modal.classList.remove("hidden");
+      video.play();
+    });
+  });
+
+  window.closeVideo = function () {
+    video.pause();
+    video.src = "";
+    modal.classList.add("hidden");
+  };
+});
+
+
