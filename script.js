@@ -6,16 +6,15 @@ function checkPassword() {
   const error = document.getElementById("error-msg");
 
   if (input === correctPassword) {
-    // hide password screen
+   
     document.getElementById("password-screen").style.display = "none";
 
-    // show main site
+   
     document.getElementById("main-content").classList.remove("hidden");
 
-    // ================= START MUSIC HERE =================
-    music.src = playlist[0];   // first song in playlist
-    music.play();              // play after unlock
-    // ====================================================
+   
+    music.src = playlist[0];   
+    music.play();              
   } else {
     error.textContent = "You got it wrong sweetheart!";
   }
@@ -92,6 +91,7 @@ function toggleMusic() {
     muteBtn.textContent = "🔇";
   }
 }
+
 
 
 
