@@ -1,35 +1,21 @@
 const correctPassword = "4utofu";
-let music;
-let wasPlaying = false;
-
-const playlist = [
-  "Sunsetz - Cigarettes After Sex.mp3",
-  "Lovers Rock.mp3",
-  "New West - Those Eyes.mp3"
-];
-
-document.addEventListener("DOMContentLoaded", () => {
-  music = document.getElementById("bg-music");
-  music.src = playlist[0];
-
-  const noBtn = document.getElementById("no-btn");
-
-  noBtn.addEventListener("mouseenter", moveNoButton);
-  noBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    moveNoButton();
-  });
-});
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value;
+  const error = document.getElementById("error-msg");
+
   if (input === correctPassword) {
+   
     document.getElementById("password-screen").style.display = "none";
+
+   
     document.getElementById("main-content").classList.remove("hidden");
-    music.play().catch(()=>{});
+
+   
+    music.src = playlist[0];   
+    music.play();              
   } else {
-    document.getElementById("error-msg").textContent =
-      "You got it wrong sweetheart!";
+    error.textContent = "You got it wrong sweetheart!";
   }
 }
 
@@ -37,62 +23,70 @@ function showSurprise() {
   document.getElementById("surprise-text").classList.remove("hidden");
 }
 
-function answerYes() {
-  const response = document.getElementById("answer-response");
-  response.textContent =
-    "That’s all I needed to hear :) Come here, you.";
-  response.classList.remove("hidden");
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
+
+cards.forEach(card => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(20px)";
+  card.style.transition = "0.8s ease";
+  observer.observe(card);
+});
+
+let modal, video;
+
+window.addEventListener("load", () => {
+  modal = document.getElementById("video-modal");
+  video = document.getElementById("popup-video");
+
+  document.querySelectorAll(".clickable").forEach(img => {
+    img.addEventListener("click", () => {
+      const src = img.getAttribute("data-video");
+      video.src = src;
+      modal.classList.remove("hidden");
+      video.play();
+    });
+  });
+});
+
+function closeVideo() {
+  video.pause();
+  video.src = "";
+  modal.classList.add("hidden");
 }
 
-function moveNoButton() {
-  const btn = document.getElementById("no-btn");
-  const container = document.querySelector(".question-buttons");
-  const maxX = container.offsetWidth - btn.offsetWidth;
-  const randomX = Math.random() * maxX;
+const playlist = [
+  "Sunsetz - Cigarettes After Sex.mp3",
+  "Lovers Rock.mp3",
+  "New West - Those Eyes.mp3"
+];
 
-  btn.style.position = "absolute";
-  btn.style.left = randomX + "px";
-  btn.style.top = "20px";
-}
+let currentSong = 0;
+const music = document.getElementById("bg-music");
+const muteBtn = document.getElementById("mute-btn");
 
 function playSong(index) {
-  music.src = playlist[index];
+  currentSong = index;
+  music.src = playlist[currentSong];
   music.play();
+  muteBtn.textContent = "🔊";
 }
 
 function toggleMusic() {
   if (music.paused) {
     music.play();
+    muteBtn.textContent = "🔊";
   } else {
     music.pause();
+    muteBtn.textContent = "🔇";
   }
 }
-
-function closeVideo() {
-  const modal = document.getElementById("video-modal");
-  const video = document.getElementById("popup-video");
-
-  video.pause();
-  video.src = "";
-  modal.classList.add("hidden");
-
-  if (wasPlaying) {
-    music.play();
-  }
-}
-
-/* Pause music when video opens */
-document.addEventListener("click", function(e) {
-  if (e.target.classList.contains("clickable")) {
-    const modal = document.getElementById("video-modal");
-    const video = document.getElementById("popup-video");
-
-    video.src = e.target.getAttribute("data-video");
-    modal.classList.remove("hidden");
-
-    wasPlaying = !music.paused;
-    music.pause();
-
-    video.play();
-  }
-});
