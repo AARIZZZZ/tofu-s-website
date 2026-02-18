@@ -1,1 +1,121 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>For Tofu ;)</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="style.css"> </head> <body> <div id="password-screen"> <div class="password-box"> <h2>Only for you, Ms. Vegan Paneer</h2> <p>let's see if you know</p> <input type="password" id="passwordInput" placeholder="Enter the passcode, madame ;)"> <button onclick="checkPassword()">Unlock </button> <p id="error-msg"></p> </div> </div> <div id="main-content" class="hidden"> <header> <h1>To, Tabassum, AKA Loco Poco,My comfort place </h1> <p>This little corner of the internet belongs to you.</p> </header> <section> <div class="card"> <h2>So..aint much of a surprise but this is somethin i wanted you to know :)</h2> <p> Okay..so, you already know everything, so i dont have to make a kickstart, but heres the thing.. Tofu, i miss you, a lot. I would be lyin if I don't say this, but you are my silver lining, the reason i go crazy, the reason i find myself awake all night thinking bout you... In this weird monotonous way, which i adore. You are my best decision, be it as friends, or be it in a relo..and you have no idea how much it hurts me every second when i realize you ain't here with me.. this website was built because i realized that maybe, your mood aint at its best, so this, is for you :)♡ And psst, if no one said it recently, I'm proud of you my lady, and i trust you with everythin. And at the same time, i love you, admire you, and look up on you :)♡ And only you. </p> </div> </section> <section> <div class="card"> <h2>You, in different shades :)</h2> <div class="photos"> <img src="c5db02bb-e60a-4320-bdfa-06e739e7a376_Original.JPG" class="photo-box clickable" data-video="third edit.mp4"> <img src="IMG_0517_Original.PNG" class="photo-box clickable" data-video="second edit.mp4"> <img src="d567327c-8ea5-478a-8708-41745e553e06.jpg" class="photo-box clickable" data-video="first edit.mp4"> <div class="photo-box">The girl in red? YES</div> <div class="photo-box">Craving for all the right reasons</div> <div class="photo-box">Makin me go crazy since day 1</div> </div> </div> </section> <section> <div class="card center"> <h2>One More Thing…</h2> <button class="surprise-btn" onclick="showSurprise()">Click Me please</button> <p id="surprise-text" class="hidden"> I adore you, for all the right reasons, and for everything that there is. I love your eyes,your smile, your hairs..the way you talk, walk and get hold of yourself..i love it all and i love you so much...i wish you were here with me coz you are my literal happiness :) </p> </div> </section> <audio id="bg-music" loop></audio> <button id="mute-btn" onclick="toggleMusic()">🔊</button> <div id="playlist"> <p class="playlist-title">Some tunes :)</p> <ul> <li onclick="playSong(0)">Sunsetz</li> <li onclick="playSong(1)">Lovers Rock</li> <li onclick="playSong(2)">Those Eyes</li> </ul> </div> <footer> Made with love, by Rixx :) </footer> </div> <div id="video-modal" class="hidden"> <div class="video-box"> <span class="close-btn" onclick="closeVideo()">✖</span> <video id="popup-video" controls></video> </div> </div> <script src="script.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Tofu ;)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+  <div id="password-screen">
+    <div class="password-box">
+      <h2>Only for you, Ms. Vegan Paneer</h2>
+
+      
+      <p>let's see if you know</p>
+
+      <input type="password" id="passwordInput" placeholder="Enter the passcode, madame ;)">
+      <button onclick="checkPassword()">Unlock </button>
+
+      <p id="error-msg"></p>
+    </div>
+  </div>
+
+  
+  <div id="main-content" class="hidden">
+
+   
+    <header>
+      <h1>To, Tabassum, AKA Loco Poco,My comfort place </h1>
+
+      
+      <p>This little corner of the internet belongs to you.</p>
+    </header>
+
+  
+    <section>
+      <div class="card">
+        <h2>So..aint much of a surprise but this is somethin i wanted you to know :)</h2>
+
+       
+        <p>
+          Okay..so, you already know everything, so i dont have to make a kickstart, but heres the thing.. Tofu, i miss you, a lot. I would be lyin if I don't say this, but you are my silver lining, the reason i go crazy, the reason i find myself awake all night thinking bout you... In this weird monotonous way, which i adore. You are my best decision, be it as friends, or be it in a relo..and you have no idea how much it hurts me every second when i realize you ain't here with me.. this website was built because i realized that maybe, your mood aint at its best, so this, is for you :)♡ And psst, if no one said it recently, I'm proud of you my lady, and i trust you with everythin. And at the same time, i love you, admire you, and look up on you :)♡
+And only you.
+        </p>
+      </div>
+    </section>
+
+   
+    <section>
+      <div class="card">
+        <h2>You, in different shades :)</h2>
+
+        <div class="photos">
+          <img src="c5db02bb-e60a-4320-bdfa-06e739e7a376_Original.JPG" class="photo-box clickable" data-video="third edit.mp4">
+          <img src="IMG_0517_Original.PNG" class="photo-box clickable" data-video="second edit.mp4">
+          <img src="d567327c-8ea5-478a-8708-41745e553e06.jpg" class="photo-box clickable" data-video="first edit.mp4">
+
+
+         
+
+          <div class="photo-box">The girl in red? YES</div>
+          <div class="photo-box">Craving for all the right reasons</div>
+          <div class="photo-box">Makin me go crazy since day 1</div>
+
+        </div>
+      </div>
+    </section>
+
+   
+    <section>
+      <div class="card center">
+        <h2>One More Thing…</h2>
+
+       
+        <button class="surprise-btn" onclick="showSurprise()">Click Me please</button>
+
+        
+        <p id="surprise-text" class="hidden">
+         I adore you, for all the right reasons, and for everything that there is. I love your eyes,your smile, your hairs..the way you talk, walk and get hold of yourself..i love it all and i love you so much...i wish you were here with me coz you are my literal happiness :)
+        </p>
+      </div>
+    </section>
+
+    <audio id="bg-music" loop></audio>
+
+<button id="mute-btn" onclick="toggleMusic()">🔊</button>
+
+<div id="playlist">
+  <p class="playlist-title">Some tunes :)</p>
+  <ul>
+    <li onclick="playSong(0)">Sunsetz</li>
+    <li onclick="playSong(1)">Lovers Rock</li>
+    <li onclick="playSong(2)">Those Eyes</li>
+  </ul>
+</div>
+
+  
+    <footer>
+      Made with love, by Rixx :)
+    </footer>
+
+  </div>
+
+  <div id="video-modal" class="hidden">
+  <div class="video-box">
+    <span class="close-btn" onclick="closeVideo()">✖</span>
+
+    <video id="popup-video" controls></video>
+  </div>
+</div>
+
+
+ 
+  <script src="script.js"></script>
+</body>
+</html>
